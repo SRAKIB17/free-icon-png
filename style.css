@@ -1,0 +1,6 @@
+.download {
+    display: none;
+}
+.icon:hover .download {
+    display: flex;
+}
