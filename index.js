@@ -1,11 +1,11 @@
 const icon = document.getElementById('icon')
-for (let index = 0; index < 10; index++) {
+for (let index = 0; index < 1000; index++) {
     let divIcon = 
-        `<div id="icon-2" class="p-1 rounded-sm  shadow-sm shadow-cyan-500 relative icon hover:shadow-blue-500 hover:shadow-md">
-            <div class="bg-red-50 top-0 left-0 bottom-0 absolute p-2 z-[-1]">
+        `<div id="icon-2" class="p-1 w-full rounded-sm  shadow-sm shadow-cyan-500 relative icon hover:shadow-blue-500 hover:shadow-md">
+            <div class=" bg-red-50 top-0 left-0 bottom-0  p-1 z-[-1]">
                 <img src="images/128px/${index}.png" alt="" >
              </div>
-            <div class="justify-between z-20 download">
+            <div class="absolute justify-between z-20 download">
                 <div class="bg-violet-200 rounded-md hover:bg-violet-400">
                     <a href="images/128px/.png" class="z-40" download="">
                         <i style="font-size:20px" class="fa">16px</i>
