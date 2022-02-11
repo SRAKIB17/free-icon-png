@@ -5,28 +5,33 @@ function showDefault(){
     showIcon(1)
 }
 function showIcon(page){
+    let perPage = document.getElementById('perPage').value;
+    if (perPage< 30) {
+        perPage = 30;
+    }
     if (page.value>1) {
-        autoDivIcon(page.value)
+        autoDivIcon(page.value,perPage)
         pageStyle(page.value)
     
         return divIcon = '';
     }
     else{
-        autoDivIcon(1)
+        autoDivIcon(1,perPage)
         pageStyle(1)
         return divIcon = ''
     }
 }
 // create auto matic div for icon 
-function autoDivIcon(page){
+function autoDivIcon(page,perPage){
+    pageCount(perPage)
     let divIcon = '';
     const icon = document.getElementById('icon');
     icon.innerHTML = ''
-    let index = 100*(page-1)
-    let showIcon = page*100 - 1;
+    let index = perPage*(page-1)
+    let showIcon = page*perPage - 1;
     if (index == 0){
         index =1
-        showIcon = 100
+        showIcon = perPage
     }
     while (index <= showIcon) {
         divIcon = 
