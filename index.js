@@ -57,7 +57,7 @@ function autoDivIcon(page,perPage){
                             </h3>
                         </div>
                         <div class="bg-green-200 hover:bg-green-400">
-                            <a href="images/128px/1.png" class="z-40" download="">
+                            <a href="images/128px/${index}.png" class="z-40" download="">
                                 <i style="font-size:24px" class="fa">&#xf019;</i>
                             </a>
                             
