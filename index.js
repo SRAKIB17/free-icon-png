@@ -5,7 +5,7 @@ function showDefault(){
     showIcon(1)
 }
 function showIcon(page){
-    
+
     const icon = document.getElementById('icon');
     if (page.value>1) {
         let index = 100*(page.value-1)
@@ -71,8 +71,11 @@ function showIcon(page){
         
                     </div>
                 </div>`
-        
             icon.innerHTML += divIcon
         }
+        document.getElementById('page-1').setAttribute('disabled',true)
+        let classRemove = document.getElementById('page-1').classList;
+        classRemove.remove('bg-fuchsia-300','hover:bg-fuchsia-400','hover:border-indigo-600','hover:bg-green')
+        classRemove.add('bg-red-500')
     }
 }
