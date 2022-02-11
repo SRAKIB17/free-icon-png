@@ -19,3 +19,7 @@ function pageCount(perPage){
 document.getElementById('perPage').addEventListener('keyup',function(){
     showIcon(1)
 })
+
+document.getElementById('perPage').addEventListener('change',function(){
+    showIcon(1)
+})
