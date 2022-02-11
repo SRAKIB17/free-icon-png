@@ -6,8 +6,12 @@ function showDefault(){
 }
 function showIcon(page){
     let perPage = document.getElementById('perPage').value;
-    if (perPage< 30) {
+    if (perPage< 30 || perPage > 200) {
         perPage = 30;
+        document.getElementById('error').innerText = 'please enter a valid numbet ...per page from 30 to 200'
+    }
+    else{
+        document.getElementById('error').innerText = ''
     }
     if (page.value>1) {
         autoDivIcon(page.value,perPage)
