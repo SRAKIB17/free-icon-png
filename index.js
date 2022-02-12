@@ -50,55 +50,37 @@ function autoDivIcon(page,perPage){
     }
     while (index <= showIcon) {
         divIcon = 
-                `<div id="${index}" class="p-1 w-full rounded-sm  shadow-sm shadow-cyan-500 relative icon hover:shadow-blue-500 hover:shadow-md" onclick='iconView(this)'>
-                    <div class=" bg-red-50 top-0 left-0 bottom-0  p-1" >
+                `<div id="icon-2" class="p-1 w-full rounded-sm  shadow-sm shadow-cyan-500 relative icon hover:shadow-blue-500 hover:shadow-md">
+                    <div class=" bg-red-50 top-0 left-0 bottom-0  p-1 z-[-1]">
                         <img src="images/128px/${index}.png" alt="" >
                      </div>
+                    <div class="absolute justify-between z-20 download">
+                        <div class="bg-violet-200 rounded-md hover:bg-violet-400">
+                            <a href="images/32px/${index}.png" class="z-40" download="">
+                                <i style="font-size:20px" class="fa">32px</i>
+                            </a>
+                        </div>
+                        <div class="bg-yellow-200 rounded-md hover:bg-yellow-400">
+                            <h3>
+                                <a href="images/64px/${index}.png" class="z-40" download="">
+                                    <i style="font-size:20px" class="fa">64px</i>
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="bg-green-200 hover:bg-green-400">
+                            <a href="images/128px/${index}.png" class="z-40" download="">
+                                <i style="font-size:24px" class="fa">&#xf019;</i>
+                            </a>
+                            
+                        </div>
+        
+                    </div>
                 </div>`
         icon.innerHTML += divIcon
         index++
     }
 }
 // iconView
-function iconView(index){
-    document.getElementById('fullBody').style.display = 'block'
-    const iconView = document.getElementById('iconView')
-    iconView.style.display = 'block';
-    iconView.innerHTML = `<div class="centerIcon">
-    <div class="relative rounded-sm  shadow-sm shadow-cyan-500 icon hover:shadow-blue-500 hover:shadow-md p-1 z-[100]">
-
-    <button style="font-size:24px" class="absolute top-0 right-0 m-2 " onclick="closeShowIcon()"> <i class="fa fa-close text-red-500"></i></button>
-    <img src="images/128px/${index.id}.png" alt="" class="bg-red-50">
-    <div class="flex justify-between bg-sky-500">
-      <div class="bg-violet-200 rounded-md hover:bg-violet-400">
-        <a href="images/32px/${index.id}.png" class="z-40" download="">
-            <i style="font-size:20px" class="fa">32px</i>
-        </a>
-      </div>
-      <div class="bg-yellow-200 rounded-md hover:bg-yellow-400">
-        <h3>
-            <a href="images/64px/${index.id}.png" class="z-40" download="">
-                <i style="font-size:20px" class="fa">64px</i>
-            </a>
-        </h3>
-      </div>
-      <div class="bg-green-200 hover:bg-green-400">
-        <a href="images/128px/${index.id}.png" class="z-40" download="">
-            <i style="font-size:24px" class="fa">&#xf019;</i>
-        </a>
-        
-      </div>
-    </div>
-  </div>
-  </div>`
-
-}
-function closeShowIcon(){
-    document.getElementById('fullBody').style.display = 'none'
-    const iconView = document.getElementById('iconView')
-    iconView.style.display = 'none';
-    console.log(545)
-}
 // page style 
 function pageStyle(page){
     let buttonCount = document.getElementById('page').children;
