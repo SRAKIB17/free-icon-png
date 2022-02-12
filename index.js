@@ -5,25 +5,36 @@ function showDefault(){
     showIcon(1)
 }
 function showIcon(page){
-    let perPage = document.getElementById('perPage').value;
-    if (perPage< 30 || perPage > 200) {
-        perPage = 30;
-        document.getElementById('error').innerText = 'please enter a valid numbet ...per page from 30 to 200'
+    setTimeout(busy, 10)
+    function busy(){
+        const icon = document.getElementById('icon');
+        icon.innerHTML = `<div class="flex justify-center align-center">
+        <img src="images/busy.gif" alt="">
+      </div>`
+      setTimeout(showing,1000)
     }
-    else{
-        document.getElementById('error').innerText = ''
+    function showing(){
+        let perPage = document.getElementById('perPage').value;
+        if (perPage< 30 || perPage > 200) {
+            perPage = 30;
+            document.getElementById('error').innerText = 'please enter a valid numbet ...per page from 30 to 200'
+        }
+        else{
+            document.getElementById('error').innerText = ''
+        }
+        if (page.value>1) {
+            autoDivIcon(page.value,perPage)
+            pageStyle(page.value)
+        
+            return divIcon = '';
+        }
+        else{
+            autoDivIcon(1,perPage)
+            pageStyle(1)
+            return divIcon = ''
+        }
     }
-    if (page.value>1) {
-        autoDivIcon(page.value,perPage)
-        pageStyle(page.value)
     
-        return divIcon = '';
-    }
-    else{
-        autoDivIcon(1,perPage)
-        pageStyle(1)
-        return divIcon = ''
-    }
 }
 // create auto matic div for icon 
 function autoDivIcon(page,perPage){
