@@ -9,7 +9,7 @@ function showIcon(page){
     function busy(){
         const icon = document.getElementById('icon');
         icon.innerHTML = `<div class="flex justify-center align-center">
-        <img src="images/busy.gif" alt="">
+        <img src="images/busy.gif" class='w-full h-[40px]' alt="">
       </div>`
       setTimeout(showing,1000)
     }
